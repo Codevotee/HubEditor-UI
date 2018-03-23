@@ -9,6 +9,7 @@ import { EffectsModule } from '@ngrx/effects';
 
 import { reducers } from './store';
 import { LoadReposEffects } from './store/effects/load-repos.effects';
+import { LoadRepoContentEffects } from './store/effects/repo-content.effects';
 
 import { AppComponent } from './app.component';
 import { LoadReposComponent } from './components/load-repos/load-repos.component';
@@ -30,7 +31,7 @@ import { AppRoutes } from './app.routes';
     FormsModule,
     RouterModule.forRoot(AppRoutes),
     StoreModule.forRoot(reducers),
-    EffectsModule.forRoot([LoadReposEffects])
+    EffectsModule.forRoot([LoadReposEffects, LoadRepoContentEffects])
   ],
   providers: [RepoService],
   bootstrap: [AppComponent]
